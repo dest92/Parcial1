@@ -1,0 +1,30 @@
+D:\Cursos\C#\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.exe
+D:\Cursos\C#\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.deps.json
+D:\Cursos\C#\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.runtimeconfig.json
+D:\Cursos\C#\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.dll
+D:\Cursos\C#\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.pdb
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.csproj.AssemblyReference.cache
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.AssemblyInfoInputs.cache
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.AssemblyInfo.cs
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.csproj.CoreCompileInputs.cache
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.dll
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\refint\Parcial1.dll
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.pdb
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.genruntimeconfig.cache
+D:\Cursos\C#\parciales\Parcial1\Parcial1\obj\Debug\net6.0\ref\Parcial1.dll
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.exe
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.deps.json
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.runtimeconfig.json
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.dll
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\bin\Debug\net6.0\Parcial1.pdb
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.csproj.AssemblyReference.cache
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.GeneratedMSBuildEditorConfig.editorconfig
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.AssemblyInfoInputs.cache
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.AssemblyInfo.cs
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.csproj.CoreCompileInputs.cache
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.dll
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\refint\Parcial1.dll
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.pdb
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\Parcial1.genruntimeconfig.cache
+E:\Cursos\C#\PROG 2\parciales\Parcial1\Parcial1\obj\Debug\net6.0\ref\Parcial1.dll
