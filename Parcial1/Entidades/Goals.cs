@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Parcial1.Entidades
 {
+    //Goals list by match
+    
+    
     class Goals
     {
         public int GoalId;

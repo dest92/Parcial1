@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Parcial1.Control
 {
-    class ControlPosition
+   static class ControlPosition
     {
-        public List<Position> pos;
+        public static List<Position> pos = new List<Position>();
 
-        public void AddPosition()
+        public static void AddPosition()
         {
-            pos = new List<Position>();
+            
 
             pos.Add(new Position("Arquero"));
             pos.Add(new Position("Defensor"));
@@ -22,7 +22,7 @@ namespace Parcial1.Control
 
         }
 
-        public void ShowPosition()
+        public static void ShowPosition()
         {
             foreach (Position p in pos)
             {

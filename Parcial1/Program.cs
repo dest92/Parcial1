@@ -20,7 +20,7 @@ namespace parcial
 
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
 
-                System.Threading.Thread.Sleep(2000);
+                
 
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("1. Inicializar todo");
@@ -88,24 +88,23 @@ namespace parcial
 
                     case 1:
                         Console.Clear();
-                        ControlGoals cg = new();
-                        cg.AddGoal();
-                        ControlMatches cm = new();
-                        cm.AddMatch();
-                        ControlTeams ct = new();
-                        ct.AddTeam();
-                        ControlTournament ctour = new();
-                        ctour.AddTournament();
-                        ControlPosition controlPosition = new();
-                        controlPosition.AddPosition();
-                        ControlPlayers controlPlayers = new();
-                        controlPlayers.AddPlayer();
+                        
+                        ControlGoals.AddGoal();
+                        
+                        ControlMatches.AddMatch();
+                        
+                        ControlTeams.AddTeam();
+                        
+                        ControlTournament.AddTournament();
+                        
+                        ControlPosition.AddPosition();
+                        
+                        ControlPlayers.AddPlayer();
                         break;
 
                     case 2:
                         Console.Clear();
-                        ControlTournament controlTournament = new();
-                        controlTournament.AddMatchInTournament();
+                        ControlTournament.AddMatchInTournament();
                         break;
 
                     default:

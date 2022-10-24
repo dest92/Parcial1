@@ -3,17 +3,18 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Parcial1.Control
 {
-     class ControlMatches
+     static class ControlMatches
     {
 
-        public List<Matches> matches;
-        public void AddMatch()
+        public static List<Matches> matches = new List<Matches>();
+        public static void AddMatch()
         {
-            matches = new List<Matches>();
+            
 
             matches.Add(new Matches(1, 1, 2, 2, 1,1));
             matches.Add(new Matches(2, 3, 4, 1, 1, 1));
@@ -24,14 +25,43 @@ namespace Parcial1.Control
             matches.Add(new Matches(7, 5, 2, 1, 1, 1));
         }
 
-        public void ShowMatches()
+        public static void ShowMatches()
         {
-            matches = new List<Matches>();
+            
             foreach (Matches match in matches)
             {
-                Console.WriteLine("Id: " + match.MatchId + " Local: " + match.LocalTeam + " Visitor: " + match.VisitorTeam +  " LocalGoals: " + match.GoalsLocal + " VisitorGoals: " + match.GoalsVisitor);
+                
+                Console.WriteLine("Id: " + match.MatchId + " Local: " + ControlTeams.GetTeamName(match.LocalTeam) + " Visitor: " + ControlTeams.GetTeamName(match.VisitorTeam) + " LocalGoals: " + match.GoalsLocal + " VisitorGoals: " + match.GoalsVisitor + " Winner: " + WinnerMatch(match.MatchId));
             }
         }
+
+        //Return winner of a match with team name
+        public static string WinnerMatch(int matchId)
+        {
+            string winner = "";
+            foreach (Matches match in matches)
+            {
+                if (match.MatchId == matchId)
+                {
+                    if (match.GoalsLocal > match.GoalsVisitor)
+                    {
+                        winner = ControlTeams.GetTeamName(match.LocalTeam);
+                    }
+                    else if (match.GoalsLocal < match.GoalsVisitor)
+                    {
+                        winner = ControlTeams.GetTeamName(match.VisitorTeam);
+                    }
+                    else
+                    {
+                        winner = "Draw";
+                    }
+                }
+            }
+            return winner;
+        }
+
+
+      }
         
     }
-}
+

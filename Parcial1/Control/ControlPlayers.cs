@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace Parcial1.Control
 {
-    class  ControlPlayers
+    static class  ControlPlayers
     {
+        
+        public static List<Players> players  = new List<Players>();
 
-        public List<Players> players;
 
          
-        public  void AddPlayer()
+        public static void AddPlayer()
         {
-            players = new List<Players>();
-
+            
             //add players
             players.Add(new Players(1, "Carlos", "Tevez", 35, 10, 4, 1));
             players.Add(new Players(2, "Gonzalo", "Higuain", 32, 9, 4, 2));
@@ -42,11 +42,11 @@ namespace Parcial1.Control
 
         }
 
-        public  void ShowPlayers()
+        public static void ShowPlayers()
         {
             foreach (Players player in players)
             {
-                Console.WriteLine("Id: " + player.PlayerId + " Name: " + player.PlayerName + " Last Name: " + " Team: " + player.TeamId);
+                Console.WriteLine("Id: " + player.PlayerId + " Name: " + player.PlayerName + " Last Name: " + player.PlayerLastName + " Team: " + player.TeamId);
             }
         }
 

@@ -7,15 +7,11 @@ using System.Threading.Tasks;
 
 namespace Parcial1.Control
 {
-    class ControlGoals
+    static class ControlGoals
     {
-        public List<Goals> goals;
-        public void AddGoal()
+        public static List<Goals> goals = new List<Goals>();
+        public static void AddGoal()
         {
-            goals = new List<Goals>();
-
-            //add goals
-
             goals.Add(new Goals(1, 1, 1, 1));
             goals.Add(new Goals(2, 1, 1, 1));
             goals.Add(new Goals(3, 1, 1, 1));
@@ -30,7 +26,7 @@ namespace Parcial1.Control
 
         }
 
-        public void ShowGoals()
+        public static void ShowGoals()
         {
             foreach (Goals goal in goals)
             {
@@ -38,7 +34,7 @@ namespace Parcial1.Control
             }
         }
 
-        public void ShowGoalsByPlayer(int playerId)
+        public static void ShowGoalsByPlayer(int playerId)
         {
             foreach (Goals goal in goals)
             {
@@ -49,7 +45,7 @@ namespace Parcial1.Control
             }
         }
 
-        public void ShowGoalsByTeam(int teamId)
+        public static void ShowGoalsByTeam(int teamId)
         {
             foreach (Goals goal in goals)
             {
@@ -61,7 +57,7 @@ namespace Parcial1.Control
         }
 
 
-        public void ShowGoalsByMatch(int matchId)
+        public static void ShowGoalsByMatch(int matchId)
         {
             foreach (Goals goal in goals)
             {
@@ -73,27 +69,10 @@ namespace Parcial1.Control
         }
 
 
-        public void AddGoalInMatch(int matchId, int playerId, int teamId) { 
+        public static void AddGoalInMatch(int matchId, int playerId, int teamId) { 
         
             goals.Add(new Goals(goals.Count + 1, matchId, playerId, teamId));
-                //Console.WriteLine("Enter the match id: ");
-                //ControlMatches cm = new();
-                //cm.ShowMatches();
-                //int matchId = Convert.ToInt32(Console.ReadLine());
-
-                //Console.WriteLine("Enter the team id: ");
-                //ControlTeams ct = new();
-                //ct.ShowTeams();
-                //int teamId = Convert.ToInt32(Console.ReadLine());
-            
-                //Console.WriteLine("Enter the player id: ");
-                //ControlPlayers cp = new();
-                //cp.ShowPlayers();
-
-                //int playerId = Convert.ToInt32(Console.ReadLine());
-     
-                //goals.Add(new Goals(goals.Count + 1, playerId, matchId, teamId));
-            
+ 
         }
 
 

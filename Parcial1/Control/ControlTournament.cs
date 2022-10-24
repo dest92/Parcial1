@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Parcial1.Control
 {
-    class ControlTournament
+    static class ControlTournament
     {
-        public List<Tournament> tournaments;
-        public void AddTournament()
+        public static List<Tournament> tournaments = new List<Tournament>();
+        public static void AddTournament()
         {
-            tournaments = new List<Tournament>();
+            
 
             tournaments.Add(new Tournament(1, "Copa Argentina", 1));
             tournaments.Add(new Tournament(2, "Copa Libertadores", 1));
@@ -23,7 +23,7 @@ namespace Parcial1.Control
             
         }
 
-        public void ShowTournament()
+        public static void ShowTournament()
         {
             foreach (Tournament t in tournaments.DistinctBy(x => x.TournamentId)) //tour through the list and select the tournaments by id omitting the ones that are repeated
             {
@@ -34,22 +34,22 @@ namespace Parcial1.Control
 
         }
 
-        public void AddMatchInTournament()
+        public static void AddMatchInTournament()
         {
             //Add match in tournament
             try
             {
-                ControlMatches cm = new ControlMatches();
+
                 //cm.AddMatch();
-                cm.ShowMatches();
+                ControlMatches.ShowMatches();
 
                 Console.WriteLine("Input the id for a new match");
                 int id = int.Parse(Console.ReadLine());
 
                 Console.WriteLine("Input the id for the first team");
 
-                ControlTeams ct = new();
-                ct.ShowTeams();
+
+                ControlTeams.ShowTeams();
 
                 int Fteam = int.Parse(Console.ReadLine());
 
@@ -68,10 +68,9 @@ namespace Parcial1.Control
                 do
                 {
                     Console.WriteLine("Add goals");
-                    ControlGoals cg = new();
-                    ControlPlayers cp = new();
+
                     Console.WriteLine("Input the scorer player");
-                    cp.ShowPlayers();
+                    ControlPlayers.ShowPlayers();
                     int playerId = int.Parse(Console.ReadLine());
 
                     Console.WriteLine("Input the scorer team");
@@ -80,11 +79,21 @@ namespace Parcial1.Control
                     int teamGoal = int.Parse(Console.ReadLine());
 
 
-                    cg.AddGoalInMatch(id, playerId, teamGoal);
+                    ControlGoals.AddGoalInMatch(id, playerId, teamGoal);
 
                     Console.WriteLine("Do you want to add another goal? 1. Yes 2. No");
                     exit = int.Parse(Console.ReadLine());
                 } while (exit == 1);
+
+                //Count Local Goals
+                int localGoals = ControlGoals.goals.Count(x => x.MatchId == id && x.TeamId == Fteam);
+
+                //Count Visitor Goals
+                int visitorGoals = ControlGoals.goals.Count(x => x.MatchId == id && x.TeamId == Steam);
+
+                ControlMatches.matches.Add(new Matches(id, Fteam, Steam, tournament, localGoals, visitorGoals));
+                //add match
+
             }
             catch (Exception ex)
             {
