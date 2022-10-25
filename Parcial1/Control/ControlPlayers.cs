@@ -50,6 +50,19 @@ namespace Parcial1.Control
             }
         }
 
+        //show players by teams
+
+        public static void ShowPlayersByTeam(int teamId)
+        {
+            foreach (Players player in players)
+            {
+                if (player.TeamId == teamId)
+                {
+                    Console.WriteLine("Id: " + player.PlayerId + " Name: " + player.PlayerName + " Last Name: " + player.PlayerLastName + " Team: " + player.TeamId);
+                }
+            }
+        }
+
 
     }
 

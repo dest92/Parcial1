@@ -4,6 +4,7 @@ namespace parcial
 {
     class Program
     {
+        int initialize = 0;
         static void Main(string[] args)
         {
             Menu();
@@ -14,6 +15,7 @@ namespace parcial
         {
             Console.Clear();
             int options = 1;
+            
             while (options != 0)
             {
                 
@@ -25,12 +27,16 @@ namespace parcial
                 Console.WriteLine("0. Salir");
                 Console.WriteLine("1. Inicializar todo");
                 Console.WriteLine("2. Agregar partido en torneo");
+                Console.WriteLine("3. Mostrar partidos");
+                Console.WriteLine("4. Listar estadisticas");
+
 
                 //Seleccionar opcion con las flechas
                 int index = 0;
                 int selected = 0;
                 int salir = 0;
-                string[] opciones = { "0. Exit", "1. Inicializar todo", "2. Agregar partido en torneo" };
+                string[] opciones = { "0. Exit", "1. Inicializar todo", "2. Agregar partido en torneo", "3. Mostrar partidos", "4. Listar estadisticas" };
+                
                 do
                 {
                     index = selected;
@@ -39,6 +45,8 @@ namespace parcial
                     Console.WriteLine("0. Exit");
                     Console.WriteLine("1. Inicializar todo");
                     Console.WriteLine("2. Agregar partido en torneo");
+                    Console.WriteLine("3. Mostrar partidos");
+                    Console.WriteLine("4. Listar estadisticas");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.SetCursorPosition(0, index);
                     Console.CursorVisible = false;
@@ -88,7 +96,7 @@ namespace parcial
 
                     case 1:
                         Console.Clear();
-                        
+                        //if was initialized before
                         ControlGoals.AddGoal();
                         
                         ControlMatches.AddMatch();
@@ -104,8 +112,23 @@ namespace parcial
 
                     case 2:
                         Console.Clear();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         ControlTournament.AddMatchInTournament();
                         break;
+                    case 3:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        ControlMatches.ShowMatches();
+                        Console.ReadKey();
+                        break;
+
+                    case 4:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        ControlStatistics.AddStatistics();
+                        ControlStatistics.ShowStatistics();
+                        Console.ReadKey();
+                        break;
+
+                    
 
                     default:
                         Console.Clear();

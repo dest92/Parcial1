@@ -16,7 +16,7 @@ namespace Parcial1.Control
         {
             
 
-            matches.Add(new Matches(1, 1, 2, 2, 1,1));
+            matches.Add(new Matches(1, 1, 2, 1, 1,1));
             matches.Add(new Matches(2, 3, 4, 1, 1, 1));
             matches.Add(new Matches(3, 5, 3, 1, 1, 1));
             matches.Add(new Matches(4, 2, 1, 1, 1, 1));
@@ -31,7 +31,7 @@ namespace Parcial1.Control
             foreach (Matches match in matches)
             {
                 
-                Console.WriteLine("Id: " + match.MatchId + " Local: " + ControlTeams.GetTeamName(match.LocalTeam) + " Visitor: " + ControlTeams.GetTeamName(match.VisitorTeam) + " LocalGoals: " + match.GoalsLocal + " VisitorGoals: " + match.GoalsVisitor + " Winner: " + WinnerMatch(match.MatchId));
+                Console.WriteLine("Id: " + match.MatchId + " Tournament: " + ControlTournament.GetTournamentName(match.TournamentId) + " Local: " + ControlTeams.GetTeamName(match.LocalTeam) + " Visitor: " + ControlTeams.GetTeamName(match.VisitorTeam) + " Local goals: " + match.GoalsLocal + " Visitor goals: " + match.GoalsVisitor + " Winner: " + WinnerMatch(match.MatchId));
             }
         }
 
