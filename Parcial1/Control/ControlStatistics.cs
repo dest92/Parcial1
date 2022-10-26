@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Drawers;
 
 namespace Parcial1.Control
 {
@@ -53,6 +54,20 @@ namespace Parcial1.Control
                             else if (m.GoalsLocal == m.GoalsVisitor)
                             {
                                 points += 1;
+                            }
+                            
+                        }
+                        if (m.VisitorTeam == t.TeamId)
+                        {
+                            {
+                                if (m.GoalsVisitor > m.GoalsLocal)
+                                {
+                                    points += 3;
+                                }
+                                else if (m.GoalsVisitor == m.GoalsLocal)
+                                {
+                                    points += 1;
+                                }
                             }
                         }
 
@@ -116,10 +131,10 @@ namespace Parcial1.Control
             //    System.IO.File.AppendAllText(@"C:\Users\Public\Statistics.txt", "Tournament: " + ControlTournament.GetTournamentName(s.TournamentID) + " Team: " + ControlTeams.GetTeamName(s.TeamID) + " Points: " + s.Points + " Matches: " + s.Matches + " Goals: " + s.Goalsfor + " Goals Against: " + s.Goalsagainst + " Goals Difference: " + s.Goaldifference + Environment.NewLine);
             //}
 
-          
+           
 
-            //Streamwriter
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\Statistics.txt", true))
+                //Streamwriter
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\Public\Statistics.txt", true))
             {
                 file.WriteLine("");
                 file.WriteLine("Statistics");
@@ -130,6 +145,55 @@ namespace Parcial1.Control
             }
             Console.WriteLine("Las estadísticas fueron guardadas en: C:\\Users\\Public\\Statistics.txt");
 
+
+        }
+
+        
+
+        public static void TopScorersByTournament()
+        {
+
+            //Print scoring players
+
+            Console.WriteLine("Input the tournament id");
+            ControlTournament.ShowTournament();
+            int tournamentId = int.Parse(Console.ReadLine());
+
+            //scoring players by tournament
+
+            var scoringPlayers = ControlMatches.matches.Where(x => x.TournamentId == tournamentId).Join(ControlGoals.goals, m => m.MatchId, g => g.MatchId, (m, g) => new { m, g }).Join(ControlPlayers.players, mg => mg.g.PlayerId, p => p.PlayerId, (mg, p) => new { mg, p }).Select(x => new { x.p.PlayerName, x.p.PlayerLastName, x.mg.g.GoalId }).ToList();
+
+            //var scoringPlayersOrdered = scoringPlayers.GroupBy(x => x.PlayerLastName).Select(x => new { PlayerName = x.Key, Goals = x.Count(),  }).OrderByDescending(x => x.Goals).ToList();
+
+            //order by goals with lastname
+            var scoringPlayersOrdered2 = scoringPlayers.GroupBy(x => x.PlayerName).Select(x => new { PlayerName = x.Key, Goals = x.Count(), PlayerLastName = x.Select(y => y.PlayerLastName).FirstOrDefault() }).OrderByDescending(x => x.Goals).ToList();
+
+            foreach (var s in scoringPlayersOrdered2)
+            {
+                Console.WriteLine("Player: " + s.PlayerName + " " + s.PlayerLastName  + " Goals: " + s.Goals);
+            }
+
+
+            //list to string array [,]
+
+            string[,] scoringPlayersArray = new string[scoringPlayersOrdered2.Count+1, 3];
+
+            //Set titles and values
+            scoringPlayersArray[0, 0] = "Player";
+            scoringPlayersArray[0, 1] = "Last Name";
+            scoringPlayersArray[0, 2] = "Goals";
+
+            for (int i = 1; i < scoringPlayersOrdered2.Count + 1; i++)
+            {
+                scoringPlayersArray[i, 0] = scoringPlayersOrdered2[i - 1].PlayerName;
+                scoringPlayersArray[i, 1] = scoringPlayersOrdered2[i - 1].PlayerLastName;     
+                scoringPlayersArray[i, 2] = scoringPlayersOrdered2[i - 1].Goals.ToString();
+            }
+
+
+
+
+            Drawers.DibujarTablas.DibujaTabla(scoringPlayersArray);
 
         }
     }

@@ -29,14 +29,15 @@ namespace parcial
                 Console.WriteLine("2. Agregar partido en torneo");
                 Console.WriteLine("3. Mostrar partidos");
                 Console.WriteLine("4. Listar estadisticas");
+                Console.WriteLine("5. Listar goleadores");
 
 
                 //Seleccionar opcion con las flechas
                 int index = 0;
                 int selected = 0;
                 int salir = 0;
-                string[] opciones = { "0. Exit", "1. Inicializar todo", "2. Agregar partido en torneo", "3. Mostrar partidos", "4. Listar estadisticas" };
-                
+                string[] opciones = { "0. Exit", "1. Inicializar todo", "2. Agregar partido en torneo", "3. Mostrar partidos", "4. Listar estadisticas", "5. Listar goleadores" };
+
                 do
                 {
                     index = selected;
@@ -47,6 +48,7 @@ namespace parcial
                     Console.WriteLine("2. Agregar partido en torneo");
                     Console.WriteLine("3. Mostrar partidos");
                     Console.WriteLine("4. Listar estadisticas");
+                    Console.WriteLine("5. Listar goleadores");
                     Console.ForegroundColor = ConsoleColor.DarkRed;
                     Console.SetCursorPosition(0, index);
                     Console.CursorVisible = false;
@@ -128,7 +130,13 @@ namespace parcial
                         Console.ReadKey();
                         break;
 
-                    
+                    case 5:
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        ControlStatistics.TopScorersByTournament();
+                        Console.ReadKey();
+                        break;
+
+
 
                     default:
                         Console.Clear();
